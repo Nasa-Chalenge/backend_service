@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+  compression:
+    enabled: true
+    excluded-user-agents: msie6
+    mime-types: application/json
+    min-response-size: 10240
+
+  http2:
+    enabled: true
+
+  forward-headers-strategy: native
+
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
