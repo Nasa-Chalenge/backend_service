@@ -8,15 +8,12 @@ public class User {
 
     private final String firstName;
 
-    private final String secondName;
+    private final String lastName;
 
-    private final String address;
-
-    public User(final String id, final String firstName, final String secondName, final String address) {
+    public User(final String id, final String firstName, final String lastName) {
         this.id = id;
         this.firstName = firstName;
-        this.secondName = secondName;
-        this.address = address;
+        this.lastName = lastName;
     }
 
     public String getId() {
@@ -27,12 +24,8 @@ public class User {
         return firstName;
     }
 
-    public String getSecondName() {
-        return secondName;
-    }
-
-    public String getAddress() {
-        return address;
+    public String getLastName() {
+        return lastName;
     }
 
     @Override
@@ -40,14 +33,12 @@ public class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) &&
-                Objects.equals(firstName, user.firstName) &&
-                Objects.equals(secondName, user.secondName);
+        return Objects.equals(id, user.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, secondName);
+        return Objects.hash(id);
     }
 
 }
