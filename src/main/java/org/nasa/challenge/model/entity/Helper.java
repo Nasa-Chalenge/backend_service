@@ -1,6 +1,6 @@
 package org.nasa.challenge.model.entity;
 
-import org.nasa.challenge.model.entity.account.PersonAccount;
+import org.nasa.challenge.model.entity.account.Account;
 import org.nasa.challenge.model.enums.HelperAction;
 import org.nasa.challenge.model.enums.Status;
 
@@ -25,7 +25,7 @@ public class Helper {
 
     @ManyToOne
     @JoinColumn(name = "account_id", nullable = false)
-    private PersonAccount personAccount;
+    private Account account;
 
     @Column(name = "name")
     private String name;
@@ -46,12 +46,12 @@ public class Helper {
         this.id = id;
     }
 
-    public PersonAccount getPersonAccount() {
-        return personAccount;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setUserId(final PersonAccount personAccount) {
-        this.personAccount = personAccount;
+    public void setUserId(final Account personAccount) {
+        this.account = personAccount;
     }
 
     public String getName() {
